@@ -1,4 +1,9 @@
-﻿namespace produtoCRUD.Infraestructure.Repositories
+﻿using Microsoft.EntityFrameworkCore;
+using produtoCRUD.Domain.Entities;
+using produtoCRUD.Domain.Interfaces;
+using produtoCRUD.Infraestructure.Data;
+
+namespace produtoCRUD.Infraestructure.Repositories
 {
     public class ProdutoRepository : IProdutoRepository
     {
@@ -15,7 +20,7 @@
             return await _context.Produtos.FindAsync(id);
         }
 
-        public async Task<List<Prodto>>GetAllAsync()
+        public async Task<List<Produto>>GetAllAsync()
         {
             return await _context.Produtos.ToListAsync();
 
